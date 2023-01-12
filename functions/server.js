@@ -1,1 +1,1 @@
-export { proxy } from '../bin/www/lambda';
+export { handler } from '../bin/www/lambda';
