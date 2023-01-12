@@ -1,14 +1,14 @@
-import fastify from '../../src/v1/Fastify';
+import fastify from '../v1/Fastify';
 
-const run = async () => {
-  try {
-    await fastify.listen({ port: 3333 });
-  } catch (e) {
-    process.exit(1);
-  }
-};
-
-run();
+// const run = async () => {
+//   try {
+//     await fastify.listen({ port: 3333 });
+//   } catch (e) {
+//     process.exit(1);
+//   }
+// };
+//
+// run();
 
 export default fastify;
 
