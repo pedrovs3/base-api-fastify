@@ -25,7 +25,7 @@ class App {
 
   private routes() {
     // Register routes of API
-    this.fastify.register(testRoutes);
+    this.fastify.register(testRoutes, { prefix: './netlify/functions/server/' });
   }
 }
 
