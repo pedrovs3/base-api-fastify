@@ -6,3 +6,22 @@ export async function testRoutes(fastify: FastifyInstance) {
     reply.send({ message: 'Hello!' });
   });
 }
+
+/*
+Responses:
+  Success:
+    {
+      "data": {
+        "id": 1001,
+        "name": "Wing"
+      }
+    }
+
+  Error:
+    {
+      "error": {
+        "code": 404,
+        "message": "ID not found"
+      }
+    }
+*/
