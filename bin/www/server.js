@@ -1,4 +1,4 @@
-import fastify from '../../Fastify';
+import fastify from '../../src/v1/Fastify';
 
 const run = async () => {
   try {
@@ -9,6 +9,8 @@ const run = async () => {
 };
 
 run();
+
+export default fastify;
 
 // ZOD schema
 // const userSchema = z.object({
