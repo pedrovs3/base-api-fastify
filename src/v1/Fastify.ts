@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import cors from '@fastify/cors';
-import { testRoutes } from './routes/routes';
+import helmet from '@fastify/helmet';
+import { testRoutes } from './routes';
 
 class App {
   declare fastify: FastifyInstance;
@@ -10,8 +11,10 @@ class App {
     this.fastify = Fastify({
       logger: true,
     });
+
     // Setting global middlewares in this method.
-    this.middlewares();
+    this.middlewares().then();
+
     // Setting the api routes.
     this.routes();
   }
@@ -21,11 +24,13 @@ class App {
     await this.fastify.register(cors, {
       origin: true,
     });
+
+    await this.fastify.register(helmet, { global: true });
   }
 
   private routes() {
     // Register routes of API
-    this.fastify.register(testRoutes, { prefix: '/.netlify/functions/server' });
+    this.fastify.register(testRoutes);
   }
 }
 
